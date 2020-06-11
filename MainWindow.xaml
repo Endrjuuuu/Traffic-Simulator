@@ -1,0 +1,373 @@
+﻿<Window x:Class="TrafficSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrafficSimulator"
+        mc:Ignorable="d"
+        Title="Traffic Simulator" Height="450" Width="748.05"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="car1" UriSource="Resources/Images/car1.png" />
+            <BitmapImage x:Key="car2" UriSource="Resources/Images/car2.png"/>
+            <BitmapImage x:Key="roadC" UriSource="Resources/Images/roadC.png"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="#FF547580">
+        <Grid x:Name="grid00" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveTopLeft.png"/>
+            </Grid.Background>
+            <Image x:Name="image00" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid10" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,75,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image10" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid20" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,105,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid30" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,135,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image30" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid50" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveLeft.png"/>
+            </Grid.Background>
+            <Image x:Name="image50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid100" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,345,0,0" RenderTransformOrigin="2.327,-1">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveDownLeft.png"/>
+            </Grid.Background>
+            <Image x:Name="image100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid40" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,165,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image40" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid60" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,225,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image60" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid70" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,255,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image70" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid80" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,285,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image80" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid90" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,315,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image90" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid01" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="65,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image01" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid02" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="95,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image02" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid03" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="125,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image03" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid04" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="155,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image04" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid05" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveTop.png"/>
+            </Grid.Background>
+            <Image x:Name="image05" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid15" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,75,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image15" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid25" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,105,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image25" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid35" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,135,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image35" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid45" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,165,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image45" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid55" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\crossroad.png"/>
+            </Grid.Background>
+            <Image x:Name="image55" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid54" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="155,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image54" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid53" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="125,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image53" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid52" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="95,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image52" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid51" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="65,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image51" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid101" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="65,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image101" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid102" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="95,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image102" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid103" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="125,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image103" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid104" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="155,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image104" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid105" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveDown.png"/>
+            </Grid.Background>
+            <Image x:Name="image105" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid95" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,315,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image95" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid85" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,285,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image85" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid75" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,255,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image75" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid65" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="185,225,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image65" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid106" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="215,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image106" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid107" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="245,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image107" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid108" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="275,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image108" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid109" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="305,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image109" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid1010" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,345,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveDownRight.png"/>
+            </Grid.Background>
+            <Image x:Name="image1010" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid910" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,315,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image910" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid810" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,285,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image810" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid710" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,255,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image710" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid610" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,225,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image610" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid56" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="215,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image56" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid57" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="245,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image57" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid58" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="275,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image58" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid59" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="305,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image59" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid06" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="215,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image06" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid07" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="245,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image07" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid08" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="275,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image08" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid09" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="305,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadR.png"/>
+            </Grid.Background>
+            <Image x:Name="image09" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid010" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,45,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveTopRight.png"/>
+            </Grid.Background>
+            <Image x:Name="image010" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid510" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,195,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\curveRight.png"/>
+            </Grid.Background>
+            <Image x:Name="image510" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid410" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,165,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="imag410" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid310" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,135,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image310" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid210" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,105,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image210" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grid110" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,75,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images\roadC.png"/>
+            </Grid.Background>
+            <Image x:Name="image110" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+        <Label Content="Car1" HorizontalAlignment="Left" Margin="450,45,0,0" VerticalAlignment="Top"/>
+        <Label Content="Row:" HorizontalAlignment="Left" Margin="450,79,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Car1Row" Content="label_car1Row" HorizontalAlignment="Left" Margin="542,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Column:" HorizontalAlignment="Left" Margin="450,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Position type:" HorizontalAlignment="Left" Margin="450,136,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Car1Column" Content="label_car1Column" HorizontalAlignment="Left" Margin="542,110,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Car1PositionType" Content="label_car1_positionType" HorizontalAlignment="Left" Margin="542,139,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="530,48,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label Content="oldRow" HorizontalAlignment="Left" Margin="450,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="oldColumn" HorizontalAlignment="Left" Margin="450,195,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_oldRow" Content="Label" HorizontalAlignment="Left" Margin="542,170,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_oldColumn" Content="Label" HorizontalAlignment="Left" Margin="542,195,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
