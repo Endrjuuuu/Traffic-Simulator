@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Security.Policy;
-using System.Windows.Input;
 
 namespace TrafficSimulator
 {
@@ -9,12 +7,12 @@ namespace TrafficSimulator
         public int row;
         public int column;
 
-        // TODO: oldRow i oldColumn nie sa nigdzie przypisywane
         public int oldRow;
         public int oldColumn;
 
         public PositionType positionType;
         public bool[] arrayPossibleDirection = new bool[4];
+
         public PositionType GetPositionType()
         {
             if (row == 0 && column == 0)
@@ -95,16 +93,14 @@ namespace TrafficSimulator
                 positionType = PositionType.RowRoad;
             else if (column % 5 == 0)
                 positionType = PositionType.ColumnRoad;
-
         }
 
         public Direction nextDirection;
         public Direction oldDirection;
 
-
         public void GetRandomPossibleDirection()
         {
-            Random random = new Random();
+            Random random = new Random(Guid.NewGuid().GetHashCode());
             int randomNumber = random.Next(arrayPossibleDirection.Length);
 
             while (!arrayPossibleDirection[randomNumber])
@@ -112,6 +108,7 @@ namespace TrafficSimulator
 
             nextDirection = (Direction)randomNumber;
         }
+
         public void SetPossibleDirection()
         {
             switch (positionType)
@@ -122,66 +119,77 @@ namespace TrafficSimulator
                     arrayPossibleDirection[2] = false;
                     arrayPossibleDirection[3] = true;
                     break;
+
                 case PositionType.MiddleLeft:
                     arrayPossibleDirection[0] = true;
                     arrayPossibleDirection[1] = true;
                     arrayPossibleDirection[2] = false;
                     arrayPossibleDirection[3] = true;
                     break;
+
                 case PositionType.CornerDownLeft:
                     arrayPossibleDirection[0] = true;
                     arrayPossibleDirection[1] = false;
                     arrayPossibleDirection[2] = false;
                     arrayPossibleDirection[3] = true;
                     break;
+
                 case PositionType.MiddleTop:
                     arrayPossibleDirection[0] = false;
                     arrayPossibleDirection[1] = true;
                     arrayPossibleDirection[2] = true;
                     arrayPossibleDirection[3] = true;
                     break;
+
                 case PositionType.Center:
                     arrayPossibleDirection[0] = true;
                     arrayPossibleDirection[1] = true;
                     arrayPossibleDirection[2] = true;
                     arrayPossibleDirection[3] = true;
                     break;
+
                 case PositionType.MiddleDown:
                     arrayPossibleDirection[0] = true;
                     arrayPossibleDirection[1] = false;
                     arrayPossibleDirection[2] = true;
                     arrayPossibleDirection[3] = true;
                     break;
+
                 case PositionType.CornerTopRight:
                     arrayPossibleDirection[0] = false;
                     arrayPossibleDirection[1] = true;
                     arrayPossibleDirection[2] = true;
                     arrayPossibleDirection[3] = false;
                     break;
+
                 case PositionType.MiddleRight:
                     arrayPossibleDirection[0] = true;
                     arrayPossibleDirection[1] = true;
                     arrayPossibleDirection[2] = true;
                     arrayPossibleDirection[3] = false;
                     break;
+
                 case PositionType.CornerDownRight:
                     arrayPossibleDirection[0] = true;
                     arrayPossibleDirection[1] = false;
                     arrayPossibleDirection[2] = true;
                     arrayPossibleDirection[3] = false;
                     break;
+
                 case PositionType.RowRoad:
                     arrayPossibleDirection[0] = false;
                     arrayPossibleDirection[1] = false;
                     arrayPossibleDirection[2] = true;
                     arrayPossibleDirection[3] = true;
                     break;
+
                 case PositionType.ColumnRoad:
                     arrayPossibleDirection[0] = true;
                     arrayPossibleDirection[1] = true;
                     arrayPossibleDirection[2] = false;
                     arrayPossibleDirection[3] = false;
                     break;
+
                 default:
                     break;
             }
@@ -189,7 +197,7 @@ namespace TrafficSimulator
 
         public void SetRandomPosition()
         {
-            Random random = new Random();
+            Random random = new Random(Guid.NewGuid().GetHashCode());
             int[] pos = new int[] { 0, 5, 10 };
             row = pos[random.Next(pos.Length)];
             column = pos[random.Next(pos.Length)];

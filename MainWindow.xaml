@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrafficSimulator"
         mc:Ignorable="d"
-        Title="Traffic Simulator" Height="450" Width="748.05"
+        Title="Traffic Simulator" Height="450" Width="1003.2"
         >
     <Window.Resources>
         <ResourceDictionary>
@@ -15,6 +15,11 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid Background="#FF547580">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="410*"/>
+            <ColumnDefinition Width="587*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="150" Margin="10.4,45,0,0" Stroke="Black" VerticalAlignment="Top" Width="520"/>
         <Grid x:Name="grid00" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="35,45,0,0">
             <Grid.Background>
                 <ImageBrush ImageSource="Images\curveTopLeft.png"/>
@@ -337,7 +342,7 @@
             <Grid.Background>
                 <ImageBrush ImageSource="Images\roadC.png"/>
             </Grid.Background>
-            <Image x:Name="imag410" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image x:Name="image410" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Grid>
         <Grid x:Name="grid310" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="335,135,0,0">
             <Grid.Background>
@@ -357,17 +362,20 @@
             </Grid.Background>
             <Image x:Name="image110" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Grid>
-        <Label Content="Car1" HorizontalAlignment="Left" Margin="450,45,0,0" VerticalAlignment="Top"/>
-        <Label Content="Row:" HorizontalAlignment="Left" Margin="450,79,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Car1Row" Content="label_car1Row" HorizontalAlignment="Left" Margin="542,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Column:" HorizontalAlignment="Left" Margin="450,110,0,0" VerticalAlignment="Top"/>
-        <Label Content="Position type:" HorizontalAlignment="Left" Margin="450,136,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Car1Column" Content="label_car1Column" HorizontalAlignment="Left" Margin="542,110,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Car1PositionType" Content="label_car1_positionType" HorizontalAlignment="Left" Margin="542,139,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="530,48,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label Content="oldRow" HorizontalAlignment="Left" Margin="450,167,0,0" VerticalAlignment="Top"/>
-        <Label Content="oldColumn" HorizontalAlignment="Left" Margin="450,195,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_oldRow" Content="Label" HorizontalAlignment="Left" Margin="542,170,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_oldColumn" Content="Label" HorizontalAlignment="Left" Margin="542,195,0,0" VerticalAlignment="Top"/>
+        <Label Content="Car1" HorizontalAlignment="Left" Margin="40.4,53,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Row:" HorizontalAlignment="Left" Margin="40,79,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="label_Car1Row" Content="label_car1Row" HorizontalAlignment="Left" Margin="132,79,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Column:" HorizontalAlignment="Left" Margin="40,110,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Position type:" HorizontalAlignment="Left" Margin="40.4,141,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="label_Car1Column" Content="label_car1Column" HorizontalAlignment="Left" Margin="132,110,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="label_Car1PositionType" Content="label_car1_positionType" HorizontalAlignment="Left" Margin="132,141,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="button_start" Content="Start" HorizontalAlignment="Left" Margin="10.4,21,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="1"/>
+        <Label Content="Car2" HorizontalAlignment="Left" Margin="284.4,53,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Row:" HorizontalAlignment="Left" Margin="284.4,79,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="-0.023,0.813"/>
+        <Label x:Name="label_Car2Row" Content="label_car2Row" HorizontalAlignment="Left" Margin="378,79,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Column:" HorizontalAlignment="Left" Margin="283.4,110,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Position type:" HorizontalAlignment="Left" Margin="283.4,141,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="label_Car2Column" Content="label_car2Column" HorizontalAlignment="Left" Margin="378,110,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="label_Car2PositionType" Content="label_car2_positionType" HorizontalAlignment="Left" Margin="378,141,0,0" VerticalAlignment="Top" Grid.Column="1"/>
     </Grid>
 </Window>

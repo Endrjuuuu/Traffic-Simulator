@@ -1,35 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Markup;
 
 namespace TrafficSimulator
 {
-    class Car
+    public class Car
     {
         public Position carPosition = new Position();
 
         public Random random = new Random();
+        public string bitmapSource;
 
-        //public Direction nextDirection;
-        //public Direction oldDirection;
-        public Car()
+        public Car(string carName)
         {
             carPosition.SetRandomPosition();
+            bitmapSource = $@"C:\Users\Andrzej\source\repos\TrafficSimulator\Images\{carName}.png";
         }
-
-        public PositionType GetCarPosition()
-        {
-            return carPosition.GetPositionType();
-
-        }
-
-
 
         public void GoAhead(Car anotherCar)
         {
+            carPosition.SetPositionType();
+            carPosition.SetPossibleDirection();
             if (carPosition.positionType == PositionType.ColumnRoad || carPosition.positionType == PositionType.RowRoad)
             {
                 carPosition.nextDirection = carPosition.oldDirection;
@@ -37,9 +26,10 @@ namespace TrafficSimulator
             else
             {
                 carPosition.GetRandomPossibleDirection();
-                carPosition.oldDirection = carPosition.nextDirection;   
-                //nextDirection = carPosition.nextDirection;
+                carPosition.oldDirection = carPosition.nextDirection;
             }
+            carPosition.oldRow = carPosition.row;
+            carPosition.oldColumn = carPosition.column;
 
             switch (carPosition.nextDirection)
             {
@@ -47,19 +37,23 @@ namespace TrafficSimulator
                     if ((anotherCar.carPosition.row != carPosition.row - 1) || (anotherCar.carPosition.column != carPosition.column))
                         carPosition.row--;
                     break;
+
                 case Direction.Down:
                     if ((anotherCar.carPosition.row != carPosition.row + 1) || (anotherCar.carPosition.column != carPosition.column))
                         carPosition.row++;
                     break;
+
                 case Direction.Left:
                     if ((anotherCar.carPosition.column != carPosition.column - 1) || (anotherCar.carPosition.row != carPosition.row))
                         carPosition.column--;
                     break;
+
                 case Direction.Right:
                     if ((anotherCar.carPosition.column != carPosition.column + 1) || (anotherCar.carPosition.row != carPosition.row))
                         carPosition.column++;
                     break;
             }
+            carPosition.SetPositionType();
         }
 
         public void GoAhead()
@@ -74,28 +68,29 @@ namespace TrafficSimulator
             {
                 carPosition.GetRandomPossibleDirection();
                 carPosition.oldDirection = carPosition.nextDirection;
-
-                //nextDirection = carPosition.nextDirection;
             }
+            carPosition.oldRow = carPosition.row;
+            carPosition.oldColumn = carPosition.column;
 
             switch (carPosition.nextDirection)
             {
                 case Direction.Up:
-                        carPosition.row--;
+                    carPosition.row--;
                     break;
+
                 case Direction.Down:
-                        carPosition.row++;
+                    carPosition.row++;
                     break;
+
                 case Direction.Left:
-                        carPosition.column--;
+                    carPosition.column--;
                     break;
+
                 case Direction.Right:
-                        carPosition.column++;
+                    carPosition.column++;
                     break;
             }
             carPosition.SetPositionType();
-
         }
-
     }
 }
